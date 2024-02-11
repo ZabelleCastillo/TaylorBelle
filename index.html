@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> My Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="/assets/resumeico.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="mediaqueries.css"> 
+       <script src="https://kit.fontawesome.com/522349740d.js" crossorigin="anonymous"></script>
+      
+       <script type="text/javascript"
+       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+            <script type="text/javascript">
+            (function(){
+                emailjs.init("vFD_66C3x37vIGz2s");
+            })();
+        </script>
+           <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // generate a five digit number for the contact_number variable
+                    this.contact_number.value = Math.random() * 100000 | 0;
+                    // these IDs from the previous steps
+                    emailjs.sendForm('service_k48842u', 'template_bmjttw9', this)
+                        .then(function() {
+                            // console.log('SUCCESS!');
+                            alert('Your message is successfully sent!');
+                            document.getElementById("contact-form").reset();
+                        }, function(error) {
+                            // console.log('FAILED...', error);
+                            alert('Your message is unsuccessfully sent!', error);
+                            document.getElementById("contact-form").reset();
+                        });
+                });
+            }
+        </script>
+
+        <!-- disable inspect -->
+        <script>
+
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+                    return false;
+                }
+                if(e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)){
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+                    return false;
+                }
+            }
+        </script>
+    </head>
+
+    <body  oncontextmenu="return false;">
+        <!-- <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;"> -->
+        <nav id="desktop-nav">
+            <div class="logo">  <img src="./assets/bellelogo.png" alt="profile photo" class="belle-logo"></div>
+            <div>
+                <ul class="nav-links">
+                    <li> <a href="#about"> About</a></li>
+                    <li> <a href="#experience"> Experience </a></li>
+                    <li> <a href="#projects"> Projects</a></li>
+                    <li> <a href="#acknowledgment"> Acknowledgment</a></li>
+                    <li> <a href="#contact"> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="hamburger-nav">
+            <!-- <div class="logo"> Belle</div> -->
+            <div class="logo">  <img src="./assets/bellelogo.png" alt="profile photo" class="belle-logo"></div>
+   
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+                </div>
+
+                <div class="menu-links">
+                    <li> <a href="#about" onclick="toggleMenu()"> About</a></li>
+                    <li> <a href="#experience" onclick="toggleMenu()"> Experience </a></li>
+                    <li> <a href="#projects" onclick="toggleMenu()"> Projects</a></li>
+                    <li> <a href="#acknowledgment" onclick="toggleMenu()"> Acknowledgment</a></li>
+                    <li> <a href="#contact" onclick="toggleMenu()"> Contact</a></li>
+                </div>
+            </div>
+        </nav>
+        <section id="profile">
+            <div class="section_pic-container">
+                <img src="./assets/jess2.jpg" alt="Jess Belle photo" />
+            </div>
+            <div class="section_text">
+                <p class="section_text_p1"> Hello, I'm</p>
+                <h1 class="title"> Jessa Belle</h1>
+                <p class="section_text_p2"> Software Test Engineer</p>
+                <div class="btn-container">
+                    <button download class="btn btn-color-2" onclick="window.open('./pdf/Taylorbelle.pdf')"> Download CV</button>
+                    <button class="btn btn-color-1" onclick="location.href='./#contact'"> Contact </button>
+                </div>
+                <div class="socials-container">
+                    <div class="tooltip">
+                        <img src="./assets/facebook.png" alt="My Facebook" class="icon" id="fb" onclick="location.href='https://www.facebook.com/yzabelletaylorjessbelle'">          
+                         <span class="tooltiptext">Facebook</span>
+                      </div>
+                      <div class="tooltip">
+                        <img src="./assets/github.png" alt="My GitHub" class="icon" onclick="location.href='https://github.com/ZabelleCastillo/'">
+                         <span class="tooltiptext">GitHub</span>
+                      </div>
+                      <div class="tooltip">
+                        <img src="./assets/linkedin.png" alt="My Linkedin" class="icon" onclick="location.href='https://linkedin.com/in/jessa-belle-castillo-21a724134/'">
+                          <span class="tooltiptext">LinkedIn</span>
+                      </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <p class="section_text_p1"> Get to know more</p>
+            <p class="title"> About me</p>
+            <div class="section-container">
+                <div class="section_pic-container">
+                    <img src="./assets/Jess.jpg" alt="profile photo" class="about-pic">
+                </div>
+                <div class="about-details-container">
+                    <div class="about-containers">
+                        <div class="details-container">
+                            <img src="./assets/award.png" alt="Experience" class="icon"/>
+                            <h3> Experience </h3>
+                             <p> 8 months and currently as a <br /> Software Test Engineer</p>
+                       </div>
+             
+                        <div class="details-container">
+                            <img src="./assets/education.png" alt="Education" class="icon"/>
+                            <h3> Education </h3>
+                            <p> Bachelor of Science in Information Technology <br /> Programming</p>
+                        </div>                
+                </div>
+                <!-- Located at Block 6, Lot 5, Modena Homes, Tunghaan, Minglanilla, Cebu City 6064.  -->
+                        <div class="text-container">
+                            <p>
+                                "Hello, I'm Jessa Belle, known as Jess or Taylor Belle. Located at Minglanilla, Cebu City 6064. 
+                                As a Software Test Engineer, my duties encompass utilizing Zentao as a project management tool 
+                                for reporting bugs, underscoring the pivotal role I play in assuring the quality, functionality, 
+                                and performance of software products before their launch. 
+                             </p>
+                             <p>
+                                This involves hands-on interaction with 
+                                the software and the execution of test scripts to systematically identify and address bugs and 
+                                errors, ensuring the software operates as intended. Additionally, I am actively engaged in 
+                                advancing my skills by practicing API testing using Postman and gaining proficiency in 
+                                automation testing.
+                            </p>
+                            <p> 
+                                Beyond my role as a Software Test Engineer, 
+                                I find joy in various hobbies such as working out, hiking, and indulging in motivational books. 
+                                I'm passionate about sports like basketball, badminton, jogging, lawn tennis, and billiards, and 
+                                I also enjoy coding. 
+                            </p>
+                            <p>
+                                With a diverse professional background, I've worked as an Outsourcing Agent, 
+                                been self-employed with Sogod BellyChon, and held roles such as Company Secretary, Call Analyst, 
+                                Intern, and Sales Associate, contributing to a rich and dynamic skill set."
+                            </p>
+                        </div>  
+                  </div>
+                  <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                  <img src="./assets/arrowdown.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"/>
+
+           </section>
+          
+        <section id="experience">
+            <p class="section_text_p1">Explore My</p>
+            <h1 class="title"> Experience</h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                      
+                        <h2 class="experience-sub-title">   Skills</h2>
+                        <div class="article-container">
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-brands fa-html5"></i>
+                                <div>
+                                    
+                                    <h3> HTML</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-sharp fa-solid fa-code"></i>
+                                <div>
+                                    <h3> CSS</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-brands fa-js"></i>
+                                <div>
+                                    <h3> JavaScript</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-brands fa-react"></i>
+                                <div>
+                                    <h3> React JS</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-brands fa-uikit"></i>
+                                <div>
+                                    <h3> Material UI</h3>
+                                    <p> Intermediate</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-regular fa-fingerprint"></i>
+                                <div>
+                                    <h3> IDE Selenium</h3>
+                                    <p> Intermediate</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-regular fa-city"></i>
+                                <div>
+                                    <h3> VB.NET </h3>
+                                    <p> Intermediate</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                <div>
+                                    <h3> Zentao - Project Management Tool</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="details-container">
+                        <h2 class="experience-sub-title"> Skills</h2>
+                        <div class="article-container">
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-solid fa-bug"></i>
+                                <div>
+                                    <h3> Selenium using Java </h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-solid fa-share-nodes"></i>
+                                <div>
+                                    <h3> Insomnia</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-solid fa-circle-nodes"></i>
+                                <div>
+                                    <h3> Postman</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-brands fa-php"></i>
+                                <div>
+                                    <h3> PHP Language</h3>
+                                    <p> Intermediate</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-brands fa-node-js"></i>
+                                <div>
+                                    <h3> Node JS</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-solid fa-database"></i>
+                                <div>
+                                    <h3> SQL Express</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <div>
+                                    <h3> C# </h3>
+                                    <p> Intermediate</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <!-- <img src="./assets/check.png" alt="Experience icon" class="icon"/> -->
+                                <i class="fa-solid fa-bone"></i>
+                                <div>
+                                    <h3> XAMPP</h3>
+                                    <p> Experience</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/><br/>
+            <img src="./assets/arrowdown.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
+        </section>
+        <br/><br/>
+        <section id="projects">
+            <p class="section_text_p1">Browse my previous endeavors</p>
+            <h1 class="title"> Projects</h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/hotel.jpg" alt="Projects" class="project-img"/>
+                        </div>
+                        <h2 class="experience-sub-title project-title"> Hotel Reservation </h2>
+                        <p>
+                            "Developed the Hotel Reservation System for Syshore Hotel, employing HTML and CSS for the front-end and PHP for the back-end."
+                        </p>
+                        <!-- <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> GitHub</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> Live Demo</button>
+                        </div>   -->
+                    </div>
+                        
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/stock.jpg" alt="Projects" class="project-img"/>
+                        </div>
+                        <h2 class="experience-sub-title project-title"> Motorcycle Inventory System</h2>
+                        <p>
+                            "Contributed to the Motorcycle Inventory System, utilizing VB.net for the windows application and C# for the back-end."
+                        </p>
+                        <!-- <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> GitHub</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> Live Demo</button>
+                        </div>   -->
+                    </div>
+
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/school.jpg" alt="Projects" class="project-img"/>
+                        </div>
+                        <h2 class="experience-sub-title project-title"> School Management System</h2>
+                        <p>
+                            "Collaborated on the creation of a School Management System for SNHS, incorporating ReactJS for the front-end and C# for the back-end."
+                        </p>
+                        <!-- <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> GitHub</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> Live Demo</button>
+                        </div>   -->
+                    </div>          
+                    </div>
+                </div>
+               <center><div id="seeMore" onclick="myFunction()"> <a href="#myDIV" >See more... </a></div>  </center> 
+            </div>
+        </section>
+        <div id="myDIV"  style="display: none;">        
+            <section id="projects">
+                <div class="experience-details-container">
+                    <div class="about-containers">
+                        <div class="details-container color-container">
+                            <div class="article-container">
+                                <img src="./assets/food.jpg" alt="Projects" class="project-img"/>
+                            </div>
+                            <h2 class="experience-sub-title project-title"> Food Reservation System </h2>
+                            <p>
+                                "Designed and implemented the Food Reservation System for Sogod Bellychon, using ReactJS for the front-end and C# for the back-end."
+                            </p>
+                            <!-- <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> GitHub</button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> Live Demo</button>
+                            </div>   -->
+                        </div>
+    
+                        <div class="details-container color-container">
+                            <div class="article-container">
+                                <img src="./assets/cv.jpg" alt="Projects" class="project-img"/>
+                            </div>
+                            <h2 class="experience-sub-title project-title"> Portfolio </h2>
+                            <p>
+                                "Crafted a visually appealing Portfolio web design functioning as a Curriculum Vitae, employing ReactJS for the front-end and C# for the back-end."
+                            </p>
+                            <!-- <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> GitHub</button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> Live Demo</button>
+                            </div>   -->
+                        </div>
+    
+                        <div class="details-container color-container">
+                            <div class="article-container">
+                                <img src="./assets/social.jpg" alt="Projects" class="project-img"/>
+                            </div>
+                            <h2 class="experience-sub-title project-title"> Social Media ReactJS </h2>
+                            <p>
+                                "Executed the development of a Social Media platform, utilizing React JS with Material-UI for the front-end, while the back-end was powered by Node.js with Bench SQL."
+                            </p>
+                            <!-- <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> GitHub</button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ZabelleCastillo/'"> Live Demo</button>
+                            </div>   -->
+                        </div>
+                    </div>
+                   <center>
+                    <div id="seeLess" onclick="myFunction()"> <a href="#projects" >See less... </a></div> 
+                   </center> 
+                    <br />
+                    <img src="./assets/arrowdown.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#acknowledgment'"/>
+            </section>    
+        </div>
+       
+        <section id="acknowledgment">
+            <p class="section_text_p1">Please peruse the certificates issued for my seminars.</p>
+            <h1 class="title"> Acknowledgment</h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./Cert/auto.JPG" alt="Acknowledgment" class="project-img"/>
+                        </div>
+                        <h3 class="experience-sub-title project-title"> Automation Testing </h3>
+                        <div class="btn-container">
+                            <button download class="btn btn-color-2" onclick="window.open('./pdf/JESSA BELLE S. CASTILLO-2.pdf')"> View </button>
+                        </div>
+                    </div>
+                        
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./Cert/manaul.JPG" alt="Acknowledgment" class="project-img"/>
+                        </div>
+                        <h3 class="experience-sub-title project-title"> Manual Testing</h3>
+                        <div class="btn-container">
+                            <button download class="btn btn-color-2" onclick="window.open('./pdf/JESSA BELLE S. CASTILLO.pdf')"> View </button>
+                        </div>
+                    </div>
+
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./Cert/qgis.jpg" alt="Acknowledgment" class="project-img"/>
+                        </div>
+                        <h3 class="experience-sub-title project-title"> Quantum Geographic Information System </h3>
+                        <div class="btn-container">
+                            <button download class="btn btn-color-2" onclick="window.open('./pdf/qgis.pdf')"> View </button>
+                        </div>
+                    </div>          
+                    </div>
+                </div>
+               <center><div id="seeMoreCert" onclick="myFunctionCert()"> <a href="#myCert" >See more... </a></div>  </center>  
+            </div>
+        </section>
+   
+        <div id="myCert"  style="display: none;">    
+            <section id="projects">
+                <div class="experience-details-container">
+                    <div class="about-containers">
+                        <div class="details-container color-container">
+                            <div class="article-container">
+                                <img src="./Cert/arduino.jpg" alt="Acknowledgment" class="project-img"/>
+                            </div>
+                            <h3 class="experience-sub-title project-title"> Robotics Workshop via Arduino </h3>
+                            <div class="btn-container">
+                                <button download class="btn btn-color-2" onclick="window.open('./pdf/workshoparduino.pdf')"> View </button>
+                            </div>
+                        </div>
+    
+                        <div class="details-container color-container">
+                            <div class="article-container">
+                                <img src="./Cert/tools.jpg" alt="Acknowledgment" class="project-img"/>
+                            </div>
+                            <h3 class="experience-sub-title project-title"> Utilizing Online Strategy, Tools and Tactics for E-Tourism  </h3>
+                            <div class="btn-container">
+                                <button download class="btn btn-color-2" onclick="window.open('./pdf/etourism.pdf')"> View </button>
+                            </div>
+                        </div>              
+                    </div>
+                    <img src="./assets/arrowdown.png" alt="Arrow icon" class="icon arrow" style="bottom: 20rem" onclick="location.href='./#contact'"/>
+                   <center>
+                    <div id="seeLessCert" onclick="myFunctionCert()"> <a href="#acknowledgment" >See less... </a></div> 
+                   </center> 
+            
+            </section>   
+        </div>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+        <section id="contact"> 
+            <p class="section_text_p1">Get In Touch</p>
+            <h1 class="title"> Contact</h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                          <div class="contact-right">
+                                      <!--LOCATION FORM-->
+                                    <form id="contact-form">
+                                        <input type="hidden" name="contact_number">
+                                        <label>Name</label>
+                                        <!-- <input type="text" name="name"> -->
+                                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                        <label>Email</label>
+                                        <!-- <input type="email" name="email"> -->
+                                        <input type="email" id="email" name="email" placeholder="Your email" required>                            
+                                        <label>Message</label>
+                                        <!-- <textarea name="message"></textarea> -->
+                                        <textarea id="message" name="message" rows="6" placeholder="Your Message"></textarea>                            
+                                        <!-- <input type="submit" value="Send"> -->
+                                        <center>
+                                            <button type="submit" value="Send" class="btn btn-color-2">Submit</button>
+                                        </center>        
+                                </form>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<br/><br/><br/><br/><br/>
+        <section id="contactmail">
+            <p class="section_text_p1"> Let's create something together...</p>
+            <h1 class="title">Mail me at </h1>
+            <div class="contact-info-upper-container">
+                <div class="contact-info-container">            
+                        <img src="./assets/contact.png" alt="Contact Info" class="icon"/>
+                        <p> <a href="https://www.yahoo.com"> jessabellecastillo1993@yahoo.com</a></p>
+                </div>
+               
+                <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon"/>
+                <p> <a href="https://www.linkedin.com/in/jessa-belle-castillo-21a724134/"> linkedin</a></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <nav>
+                <div class="nav-links-container">
+                    <ul class="nav-links">
+                        <li> <a href="#about"> About</a></li>
+                        <li> <a href="#experience"> Experience </a></li>
+                        <li> <a href="#projects"> Projects</a></li>
+                        <li> <a href="#acknowledgment"> Acknowledgment</a></li>
+                        <li> <a href="#contact"> Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p>
+                Jessa Belle | Software Test Engineer. 
+                Copyright &#169; 
+                <script>document.write(new Date().getFullYear())</script>.
+                All Rights Reserved.               
+            </p>
+          
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
